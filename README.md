@@ -1,5 +1,10 @@
 # Excercise: Student management
 
+how to run:
+```sh
+javac *.java -d target; java -cp target Main
+```
+
 ## Double linked list operations
 
 1. insert/add first/middle/last
