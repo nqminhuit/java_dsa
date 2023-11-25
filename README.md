@@ -1,19 +1,34 @@
 # Excercise: Student management
 
+## Double linked list operations
+
+1. insert/add first/middle/last
+
+2. remove first/middle/last
+
+3. display (head -> tail)
+
+4. sort 
+
+5. check for empty
+
+
 ## Data structure
 
 - Student model: 
-  + id: string, max 10 chars
+  + id: string, max 10 chars, unique
   + fullname: string, max 40 chars
   + score: float
   
 - Requirements:
+  
+  0. insert students to list
 
   1. Read student list from file
   
-  2. Output student list
+  2. print student list
   
-  3. Output students whose score > 5
+  3. print students whose score > 5
   
   4. Output student whose Id = 'X'
   
@@ -28,3 +43,20 @@
   9. remove student whose id = 'X'
   
   10. remove all
+
+
+## Mockup
+
+[id: 111, fullname: batman, score: 10] <-> [id: 212, fullname: superman, score: 8] <-> [id: 123, fullname: tom, score: 4] <-> [id: 123, fullname: jerry, score: 3]
+
+- item/element structure:
+  + student
+  + next
+  + prev
+
+- list structure:
+  + head: Student
+  + tail: Student
+
+- empty list:
+  + head == null == tail
