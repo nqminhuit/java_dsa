@@ -26,7 +26,12 @@ public class Main {
         // System.out.println("\n" + x.toString() + "\n");
         // }
 
-        // TODO 5, 6
+        // TODO 5
+
+        System.out.println("6. Insert student after id = '1111111113':");
+        list.insertAfter(new Student("000", "Vinh", 10), "1111111113");
+        list.display();
+        System.out.println();
 
         System.out.println("7. After remove first student:");
         list.removeFirst();

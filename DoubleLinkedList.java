@@ -18,21 +18,36 @@ public class DoubleLinkedList {
         if (this.isEmpty()) {
             this.head = student;
             this.tail = student;
-            this.size++;
-        }
-        else {
+        } else {
             this.tail.setNext(student);
             student.setPrev(this.tail);
             this.tail = student;
         }
+        this.size++;
     }
-
-    public void insertFirst(Student student) {}
 
     /**
      * Insert `student` after student whose id == `afterId`
      */
-    public void insertMiddle(Student student, String afterId) {}
+    public void insertAfter(Student student, String afterId) {
+        if (student == null || afterId == null) {
+            return;
+        }
+        // 1. insert last
+        if (this.tail == null || afterId.equals(this.tail.getId())) {
+            insertLast(student);
+            this.size++;
+            return;
+        }
+
+        // 2. insert after x
+        Student x = findById(afterId);
+        student.setNext(x.getNext());
+        x.getNext().setPrev(student);
+
+        student.setPrev(x);
+        x.setNext(student);
+    }
 
     public void removeFirst() {
         Student currNode = head;
