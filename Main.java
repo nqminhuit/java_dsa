@@ -16,7 +16,7 @@ public class Main {
         list.display(5.0F);
         System.out.println();
 
-        System.out.println("4. Find student whose id = X");
+        System.out.println("4. Find student whose id = '1111111111'");
         Student x = list.findById("1111111111");
         System.out.println("\n" + x.toString() + "\n");
         // System.out.print("X = ");
@@ -38,5 +38,14 @@ public class Main {
         list.display();
         System.out.println();
 
+        System.out.println("9. After remove student id = '1111111113':");
+        list.removeById("1111111113");
+        list.display();
+        System.out.println();
+
+        System.out.println("10. After remove all student:");
+        list.removeAll();
+        list.display();
+        System.out.println();
     }
 }

@@ -36,22 +36,63 @@ public class DoubleLinkedList {
 
     public void removeFirst() {
         Student currNode = head;
+        if (currNode == null) {
+            return;
+        }
         head = currNode.getNext();
+        if (head == null) { // last element
+            return;
+        }
         currNode.setNext(null);
         head.setPrev(null);
+        this.size--;
     }
 
     public void removeLast() {
         Student currNode = tail;
+        if (currNode == null) {
+            return;
+        }
         tail = currNode.getPrev();
+        if (tail == null) { // last element
+            return;
+        }
         tail.setNext(null);
+        this.size--;
     }
 
-    public void removeMiddle(String id) {}
+    public void removeById(String id) {
+        // 1. remove first
+        if (id.equals(head.getId())) {
+            removeFirst();
+            return;
+        }
+
+        // 2. remove last
+        if (id.equals(tail.getId())) {
+            removeLast();
+            return;
+        }
+
+        // 3. remove middle
+        Student currNode = findById(id);
+        if (currNode == null) {
+            return;
+        }
+        Student tmpPrev = currNode.getPrev();
+        currNode.getPrev().setNext(currNode.getNext());
+        currNode.getNext().setPrev(tmpPrev);
+        currNode.setPrev(null);
+        currNode.setNext(null);
+        this.size--;
+    }
 
     public void removeAll() {
-        this.head = null;
-        this.tail = null;
+        Student currNode = this.head;
+        while (currNode != null) {
+            removeFirst();
+            currNode = this.head;
+        }
     }
 
     public void display() {
