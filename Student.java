@@ -18,6 +18,14 @@ public class Student {
         this.score = score;
     }
 
+    @Override
+    public String toString() {
+        String s = "id: " + this.getId() + "\n";
+        s += "name: " + this.getName() + "\n";
+        s += "score: " + this.getScore() + "\n";
+        return s;
+    }
+
     public String getId() {
         return id;
     }
@@ -57,6 +65,4 @@ public class Student {
     public void setPrev(Student prev) {
         this.prev = prev;
     }
-
-
 }

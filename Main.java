@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -15,5 +17,13 @@ public class Main {
         System.out.println("3. Students whose score > 5:");
         list.display(5.0F);
         System.out.println();
+
+        System.out.println("4. Find student whose id = X");
+        System.out.print("X = ");
+        try (Scanner scan = new Scanner(System.in)) {
+            String id = scan.next();
+            Student x = list.findById(id);
+            System.out.println("\n" + x.toString() + "\n");
+        }
     }
 }
