@@ -114,7 +114,7 @@ public class DoubleLinkedList {
         Student curNode = this.head;
 
         while(curNode != null) {
-            System.out.println(curNode.toString() + "\n");
+            System.out.println(curNode.toString());
             if(curNode.getNext() != null) {
                 curNode = curNode.getNext();
             }
@@ -133,7 +133,7 @@ public class DoubleLinkedList {
         while (curNode != null) {
             float studentScore = curNode.getScore();
             if (studentScore > 5) {
-                System.out.println(curNode.toString() + "\n");
+                System.out.println(curNode.toString());
             }
 
             if (curNode.getNext() != null) {

@@ -1,6 +1,10 @@
 public class Main {
 
     public static void main(String[] args) {
+        // TODO read data from file
+
+        // TODO: validate id length <= 10; name length <= 40; score <= 10.0
+
         DoubleLinkedList list = new DoubleLinkedList();
         list.insertLast(new Student("1111111111", "Bruce Wayne", 9.9F));
         list.insertLast(new Student("1111111112", "Tom Jerry", 4.9F));
@@ -19,12 +23,6 @@ public class Main {
         System.out.println("4. Find student whose id = '1111111111'");
         Student x = list.findById("1111111111");
         System.out.println("\n" + x.toString() + "\n");
-        // System.out.print("X = ");
-        // try (Scanner scan = new Scanner(System.in)) {
-        // String id = scan.next();
-        // Student x = list.findById(id);
-        // System.out.println("\n" + x.toString() + "\n");
-        // }
 
         // TODO 5
 
