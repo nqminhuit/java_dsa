@@ -1,9 +1,7 @@
 public class Student {
 
-    // TOOD: max lenght = 10
     private String id;
 
-    // TOOD: max lenght = 40
     private String name;
 
     private float score;

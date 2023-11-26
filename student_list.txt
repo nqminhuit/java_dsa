@@ -1,5 +1,15 @@
-1111111111,"Bruce Wayne",9.9
-1111111112,"Tom Jerry",4.9
-1111111113,"Jerry Tom",2.9
-1111111114,"Clark Ken",6.5
-1111111115,"Bob Kane",10
+11111111_0,"Robin",10
+11111111_1,"Bruce Wayne",9.9
+11111111_2,"Tom Jerry",4.9
+11111111_3,"Jerry Tom",2.9
+11111111_4,"Clark Ken",6.5
+11111111_5,"Batman",8.1
+11111111_6,"Joker",1.0
+11111111_7,"Wonder woman",0.9
+11111111_8,"Green arrow",5.1
+11111111_9,"The Flash",0
+1111111_10,"student whose has no score",
+1111111_11,
+11111111_9,"this is a student whose name is very long and it has more than 40 chars",0
+111111111111111111111111_9,"student whose id too large",0
+1111_9,"student whose score is invalid",11.0
