@@ -49,9 +49,10 @@ public class DoubleLinkedList {
         Student curNode = this.head;
 
         while(curNode != null) {
-            System.out.println("[curNode.id] " + curNode.getId());
-            System.out.println("[curNode.name] " + curNode.getName());
-            System.out.println("[curNode.score] " + curNode.getScore());
+            System.out.println("id: " + curNode.getId());
+            System.out.println("name: " + curNode.getName());
+            System.out.println("score: " + curNode.getScore());
+            System.out.println();
 
             if(curNode.getNext() != null) {
                 curNode = curNode.getNext();
@@ -65,7 +66,25 @@ public class DoubleLinkedList {
     /**
      * Display students whose score higher than `score`
      */
-    public void display(float score) {}
+    public void display(float score) {
+        Student curNode = this.head;
+
+        while (curNode != null) {
+            float studentScore = curNode.getScore();
+            if (studentScore > 5) {
+                System.out.println("id: " + curNode.getId());
+                System.out.println("name: " + curNode.getName());
+                System.out.println("score: " + studentScore);
+                System.out.println();
+            }
+
+            if (curNode.getNext() != null) {
+                curNode = curNode.getNext();
+            } else {
+                break;
+            }
+        }
+    }
 
     /**
      * Find student whose Id = `id`
