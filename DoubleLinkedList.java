@@ -34,9 +34,18 @@ public class DoubleLinkedList {
      */
     public void insertMiddle(Student student, String afterId) {}
 
-    public void removeFirst() {}
+    public void removeFirst() {
+        Student currNode = head;
+        head = currNode.getNext();
+        currNode.setNext(null);
+        head.setPrev(null);
+    }
 
-    public void removeLast() {}
+    public void removeLast() {
+        Student currNode = tail;
+        tail = currNode.getPrev();
+        tail.setNext(null);
+    }
 
     public void removeMiddle(String id) {}
 

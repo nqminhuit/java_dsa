@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -19,11 +17,26 @@ public class Main {
         System.out.println();
 
         System.out.println("4. Find student whose id = X");
-        System.out.print("X = ");
-        try (Scanner scan = new Scanner(System.in)) {
-            String id = scan.next();
-            Student x = list.findById(id);
-            System.out.println("\n" + x.toString() + "\n");
-        }
+        Student x = list.findById("1111111111");
+        System.out.println("\n" + x.toString() + "\n");
+        // System.out.print("X = ");
+        // try (Scanner scan = new Scanner(System.in)) {
+        // String id = scan.next();
+        // Student x = list.findById(id);
+        // System.out.println("\n" + x.toString() + "\n");
+        // }
+
+        // TODO 5, 6
+
+        System.out.println("7. After remove first student:");
+        list.removeFirst();
+        list.display();
+        System.out.println();
+
+        System.out.println("8. After remove last student:");
+        list.removeLast();
+        list.display();
+        System.out.println();
+
     }
 }
