@@ -111,6 +111,9 @@ public class DoubleLinkedList {
     }
 
     public void display() {
+        if (this.isEmpty()) {
+            System.out.println("The list is now empty!");
+        }
         Student curNode = this.head;
 
         while(curNode != null) {
