@@ -1,9 +1,25 @@
 # Excercise: Student management
 
-how to run:
+## how to run
+
 ```sh
 javac *.java -d target; java -cp target Main
 ```
+
+
+## how to package into 1 executable jar
+
+```sh
+javac *.java -d target; jar cfe java-dsa-student-management.jar Main -C target .
+```
+
+to run it:
+
+```sh
+java -jar java-dsa-student-management.jar
+```
+
+
 
 ## Double linked list operations
 
