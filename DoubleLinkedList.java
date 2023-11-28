@@ -15,13 +15,14 @@ public class DoubleLinkedList {
     }
 
     public void insertLast(Student student) {
+        Student noPointers = new Student(student.getId(), student.getName(), student.getScore());
         if (this.isEmpty()) {
-            this.head = student;
-            this.tail = student;
+            this.head = noPointers;
+            this.tail = noPointers;
         } else {
-            this.tail.setNext(student);
-            student.setPrev(this.tail);
-            this.tail = student;
+            this.tail.setNext(noPointers);
+            noPointers.setPrev(this.tail);
+            this.tail = noPointers;
         }
         this.size++;
     }
@@ -168,9 +169,54 @@ public class DoubleLinkedList {
     }
 
     /**
-     * Sort using `Merge sort algorithm` ascendant
+     * Sort by ascendant
      * */
-    public void sort() {}
+    public static DoubleLinkedList mergeSort(DoubleLinkedList list) {
+        int s = list.size;
+        if (s <= 1) {
+            return list;
+        }
+        int halfS = s / 2;
+        int i = 0;
+        Student currNode = list.head;
+        DoubleLinkedList left = new DoubleLinkedList();
+        DoubleLinkedList right = new DoubleLinkedList();
+        while (i < halfS) {
+            left.insertLast(currNode);
+            currNode = currNode.getNext();
+            i++;
+        }
+        while (currNode != null || i < s) {
+            right.insertLast(currNode);
+            currNode = currNode.getNext();
+            i++;
+        }
+        left = mergeSort(left);
+        right = mergeSort(right);
+        return merge(left, right);
+    }
+
+    private static DoubleLinkedList merge(DoubleLinkedList left, DoubleLinkedList right) {
+        DoubleLinkedList result = new DoubleLinkedList();
+        while (left.head != null && right.head != null) {
+            if (left.head.getScore() < right.head.getScore()) {
+                result.insertLast(left.head);
+                left.removeFirst();
+            } else {
+                result.insertLast(right.head);
+                right.removeFirst();
+            }
+        }
+        while (left.head != null) {
+            result.insertLast(left.head);
+            left.removeFirst();
+        }
+        while (right.head != null) {
+            result.insertLast(right.head);
+            right.removeFirst();
+        }
+        return result;
+    }
 
     // getters setters
     public Student getHead() {

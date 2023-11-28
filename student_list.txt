@@ -10,6 +10,6 @@
 11111111_9,"The Flash",0
 1111111_10,"student whose has no score",
 1111111_11,
-11111111_9,"this is a student whose name is very long and it has more than 40 chars",0
+1111111_99,"this is a student whose name is very long and it has more than 40 chars",0
 111111111111111111111111_9,"student whose id too large",0
 1111_9,"student whose score is invalid",11.0

@@ -71,7 +71,9 @@ public class Main {
         Student x = list.findById("11111111_1");
         System.out.println(x.toString());
 
-        // TODO 5
+        System.out.println("5. sort (with mergesort) by score ascendant");
+        DoubleLinkedList sorted = DoubleLinkedList.mergeSort(list);
+        sorted.display();
 
         System.out.println("6. Insert student after id = '11111111_3':");
         list.insertAfter(new Student("000", "Vinh", 10), "11111111_3");
@@ -96,6 +98,5 @@ public class Main {
         System.out.println("10. After remove all student:");
         list.removeAll();
         list.display();
-
     }
 }
